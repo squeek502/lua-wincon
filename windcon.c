@@ -17,7 +17,7 @@
     #define EXPORT
 #endif
 
-static int luawincon_clear(lua_State* L)
+static int luawindcon_clear(lua_State* L)
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     if (hStdOut == INVALID_HANDLE_VALUE)
@@ -52,7 +52,7 @@ static int luawincon_clear(lua_State* L)
     return 1;
 }
 
-static int luawincon_size(lua_State* L)
+static int luawindcon_size(lua_State* L)
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     if (hStdOut == INVALID_HANDLE_VALUE)
@@ -67,7 +67,7 @@ static int luawincon_size(lua_State* L)
     return 2;
 }
 
-static int luawincon_movecursor(lua_State* L)
+static int luawindcon_movecursor(lua_State* L)
 {
     int x = luaL_checkint(L, 1);
     int y = luaL_checkint(L, 2);
@@ -87,7 +87,7 @@ static int luawincon_movecursor(lua_State* L)
     return 1;
 }
 
-static int luawincon_showcursor(lua_State* L)
+static int luawindcon_showcursor(lua_State* L)
 {
     // default to true if not specified
     BOOL shouldShow = !lua_isnoneornil(L, 1) ? lua_toboolean(L, 1) : TRUE;
@@ -107,16 +107,16 @@ static int luawincon_showcursor(lua_State* L)
     return 1;
 }
 
-static const luaL_Reg luawincon_funcs[] = {
-    { "movecursor", luawincon_movecursor },
-    { "showcursor", luawincon_showcursor },
-    { "clear", luawincon_clear },
-    { "size", luawincon_size },
+static const luaL_Reg luawindcon_funcs[] = {
+    { "movecursor", luawindcon_movecursor },
+    { "showcursor", luawindcon_showcursor },
+    { "clear", luawindcon_clear },
+    { "size", luawindcon_size },
     { NULL, NULL }
 };
 
-EXPORT int luaopen_wincon(lua_State *L)
+EXPORT int luaopen_windcon(lua_State *L)
 {
-    luaL_newlib(L, luawincon_funcs);
+    luaL_newlib(L, luawindcon_funcs);
     return 1;
 }

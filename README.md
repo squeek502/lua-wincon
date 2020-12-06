@@ -1,21 +1,21 @@
-# lua-wincon
+# lua-windcon
 
-`wincon` is a [Lua](https://www.lua.org/) module for interacting with the console on Windows.
+`windcon` is a [Lua](https://www.lua.org/) module for interacting with the console on Windows.
 
 ```lua
-local wincon = require('wincon')
+local windcon = require('windcon')
 
 -- Clear the screen
-wincon.clear()
+windcon.clear()
 
 -- Get the console size
-local w, h = wincon.size()
+local w, h = windcon.size()
 
 -- Move the cursor to the center
-wincon.movecursor(w / 2, h / 2)
+windcon.movecursor(w / 2, h / 2)
 
 -- Hide the cursor
-wincon.showcursor(false)
+windcon.showcursor(false)
 ```
 
 ## Installation
@@ -24,19 +24,19 @@ With [Luarocks](https://luarocks.org):
 *[not published yet]*
 
 ```
-luarocks install wincon
+luarocks install windcon
 ```
 
 ## API Reference
 
-### `wincon.showcursor([state = true])`
+### `windcon.showcursor([state = true])`
 Sets the visibility of the cursor to `state`. On success, returns `true`.
 
-### `wincon.movecursor(x, y)`
+### `windcon.movecursor(x, y)`
 Moves the cursor to the given coordinates. On success, returns `true`; otherwise, returns `nil, errmsg`.
 
-### `wincon.clear()`
+### `windcon.clear()`
 Clears the screen. On success, returns `true`; otherwise, returns `nil, errmsg`.
 
-### `wincon.size()`
+### `windcon.size()`
 Returns the width and height of the console.
