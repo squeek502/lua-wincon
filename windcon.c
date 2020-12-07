@@ -69,8 +69,8 @@ static int luawindcon_size(lua_State* L)
 
 static int luawindcon_movecursor(lua_State* L)
 {
-    int x = luaL_checkint(L, 1);
-    int y = luaL_checkint(L, 2);
+    int x = (int)luaL_checkinteger(L, 1);
+    int y = (int)luaL_checkinteger(L, 2);
 
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
     if (hStdOut == INVALID_HANDLE_VALUE)
