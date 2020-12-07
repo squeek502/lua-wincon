@@ -1,0 +1,39 @@
+shallow_clone: true
+
+environment:
+  matrix:
+  - LUA: "lua 5.1"
+  - LUA: "lua 5.2 --compat none"
+  - LUA: "lua 5.3 --compat none"
+  - LUA: "luajit 2.0"
+  - LUA: "luajit 2.1"
+
+# Abuse this section so we can have a matrix with different Compiler versions
+configuration:
+  - vs_32
+  - vs_64
+
+matrix:
+  fast_finish: true
+
+install:
+  - set PATH=%CD%\env\bin;C:\Python27\Scripts;%PATH%
+  - pip install hererocks
+  - hererocks env --%LUA% --target %configuration%
+
+init:
+- set arch=
+- if "%configuration%"=="vs_64" ( set arch= Win64)
+- set generator="Visual Studio 14 2015%arch%" )
+
+before_build:
+- cmake -G %generator% .
+
+build_script:
+- cmake --build . --config Release
+
+before_test:
+
+test_script:
+
+after_test:
