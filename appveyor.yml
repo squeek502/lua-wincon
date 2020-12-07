@@ -1,5 +1,8 @@
 shallow_clone: true
 
+image:
+  - Visual Studio 2019
+
 environment:
   matrix:
   - LUA: "lua 5.1"
