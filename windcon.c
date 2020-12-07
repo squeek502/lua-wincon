@@ -1,5 +1,6 @@
 #include <lua.h>
 #include <lauxlib.h>
+#include <assert.h>
 
 #if LUA_VERSION_NUM < 502
 #ifndef luaL_newlib
