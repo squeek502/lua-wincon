@@ -1,5 +1,7 @@
 # lua-windcon
 
+[![Build status](https://ci.appveyor.com/api/projects/status/7ppcr73lx2hboy0a?svg=true)](https://ci.appveyor.com/project/squeek502/lua-windcon)
+
 `windcon` is a [Lua](https://www.lua.org/) module for interacting with the console on Windows.
 
 ```lua
