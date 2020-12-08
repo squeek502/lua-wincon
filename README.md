@@ -21,9 +21,7 @@ windcon.showcursor(false)
 ```
 
 ## Installation
-With [Luarocks](https://luarocks.org):
-
-*[not published yet]*
+With [Luarocks](https://luarocks.org/modules/squeek502/windcon):
 
 ```
 luarocks install windcon
