@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
-project (lua-windcon)
+project (lua-windcon C)
 
 # Lua
 find_package (Lua REQUIRED)

@@ -1,5 +1,5 @@
 package = "windcon"
-version = "1.0.0-1"
+version = "1.0.0-2"
 source = {
    url = "git://github.com/squeek502/lua-windcon",
    tag = "v" .. version,
